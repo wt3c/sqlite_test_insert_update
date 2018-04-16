@@ -1,3 +1,18 @@
+#PyCharm/VIM/VSCode
+ .idea
+ .ropeproject
+ .idea/
+ .ropeproject/
+ /nbproject/private/
+
+ # VirtualEnv
+ bin/
+ etc/
+ include/
+ man/
+ pip-selfcheck.json
+ share/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
