@@ -12,11 +12,11 @@ import sys
 
 from django.core.wsgi import get_wsgi_application
 
+BASE_PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# os.environ['DJANGO_SETTINGS_MODULE'] = "laboratorio.settings"
+sys.path.append(BASE_PROJECT)
 
+os.environ['DJANGO_SETTINGS_MODULE'] = "laboratorio.settings"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "laboratorio.settings")
-
-
 
 application = get_wsgi_application()
