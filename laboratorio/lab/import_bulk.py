@@ -3,7 +3,7 @@ import os
 import sqlite3
 import sys
 from collections import namedtuple
-from pprint import pprint
+from datetime import datetime
 
 BASE_PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,6 +17,7 @@ import django
 django.setup()
 
 from django.contrib.auth.models import User
+from laboratorio.lab.models import Toronto311
 
 from laboratorio.lab.timeit import timeit
 
@@ -26,42 +27,148 @@ class Handling:
     def __init__(self):
         self.owner = User.objects.get(pk=1)
         self.BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        print(self.BASEDIR)
-
-        self.conn = sqlite3.connect(os.path.join(self.BASEDIR, '../../db.sqlite3'))
 
     @timeit
     def sql_raw(self):
-        cursor = self.conn.cursor()
+
+        conn = sqlite3.connect(os.path.join(self.BASEDIR, '../db.sqlite3'))
+
+        conn.isolation_level = "EXCLUSIVE"
+        cursor = conn.cursor()
+
         cursor.execute("PRAGMA cache_size = 3096")
         cursor.execute("PRAGMA journal_mode = MEMORY")
-
-        count = 0
 
         carga_update = []
         carga_insert = []
 
         sql_insert = """
+                        INSERT INTO lab_toronto311(owner_id, creation_date, status, first_3_chars_of_postal_code,
+                        intersection_street_1, intersection_street_2, ward, service_request_type, division, section)
+                        VALUES(?,?,?,?,?,?,?,?,?,?)
                      """
-
         sql_update = """
                      """
+
+        data = None
 
         with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
             reader = csv.reader(infile)
             toronto = namedtuple("toronto", next(reader))
 
             for data in map(toronto._make, reader):
-                while count < 10:
-                    print(data._asdict())
-                    count += 1
+                carga_insert.append((self.owner.id,
+                                     data.Creation_Date,
+                                     data.Status,
+                                     data.First_3_Chars_of_Postal_Code,
+                                     data.Intersection_Street_1,
+                                     data.Intersection_Street_2,
+                                     data.Ward,
+                                     data.Service_Request_Type,
+                                     data.Division,
+                                     data.Section))
 
+                """    
+                toronto(Creation_Date='2017-01-01 00:10:19.0000000', 
+                        Status='Closed',
+                        First_3_Chars_of_Postal_Code='M9A', 
+                        Intersection_Street_1='', 
+                        Intersection_Street_2='',
+                        Ward='Etobicoke Centre (04)', 
+                        Service_Request_Type='Noise',
+                        Division='Municipal Licensing & Standards', 
+                        Section='District Enforcement')
+                """
 
-                # if self.owner.toronto311_set.filter()
+        if carga_insert:
+            try:
 
+                print('Insert SQL RAW...')
+                cursor.executemany(sql_insert, carga_insert)
+                conn.commit()
+                conn.close()
 
+            except BaseException as er:
+                print(er, data)
+
+    @timeit
+    def orm_django_bulk(self):
+
+        carga_insert = []
+
+        data = None
+        with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
+            reader = csv.reader(infile)
+            toronto = namedtuple("toronto", next(reader))
+
+            for data in map(toronto._make, reader):
+                self.dt_creation = data.Creation_Date
+
+                # if data.Creation_Date:
+                #     self.dt_creation = datetime.strptime(data.Creation_Date,
+                #                                           "%Y-%m-%d %H:%M:%S.0000000").strftime('%Y-%m-%d %H:%M:%S.0000000')
+
+                carga_insert.append((Toronto311(owner_id=self.owner.id,
+                                                creation_date=self.dt_creation,
+                                                status=data.Status,
+                                                first_3_chars_of_postal_code=data.First_3_Chars_of_Postal_Code,
+                                                intersection_street_1=data.Intersection_Street_1,
+                                                intersection_street_2=data.Intersection_Street_2,
+                                                ward=data.Ward,
+                                                service_request_type=data.Service_Request_Type,
+                                                division=data.Division,
+                                                section=data.Section)))
+        if carga_insert:
+            print("Insert ORM DJANGO BULK...")
+            Toronto311.objects.bulk_create(carga_insert)
+
+    @timeit
+    def orm_django(self):
+
+        data = None
+        carga_insert = []
+
+        with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
+            reader = csv.reader(infile)
+            toronto = namedtuple("toronto", next(reader))
+
+            for data in map(toronto._make, reader):
+
+                if data.Creation_Date:
+                    self.dt_creation = datetime.strptime(data.Creation_Date,
+                                                         "%Y-%m-%d %H:%M:%S.0000000").strftime(
+                        '%Y-%m-%d %H:%M:%S.0000000')
+
+                Toronto311.objects.create(owner_id=self.owner.id,
+                                          creation_date=self.dt_creation,
+                                          status=data.Status,
+                                          first_3_chars_of_postal_code=data.First_3_Chars_of_Postal_Code,
+                                          intersection_street_1=data.Intersection_Street_1,
+                                          intersection_street_2=data.Intersection_Street_2,
+                                          ward=data.Ward,
+                                          service_request_type=data.Service_Request_Type,
+                                          division=data.Division,
+                                          section=data.Section)
+
+        print("Insert ORM DJANGO...")
 
 
 if __name__ == '__main__':
     handle = Handling()
     handle.sql_raw()
+    # handle.orm_django_bulk()
+
+    # handle.orm_django() # Não executar novamente, pelo amor de Deus...
+
+"""
+Insert SQL RAW... 
+'sql_raw' 6.208 s
+
+Insert ORM DJANGO...
+'orm_django' 107.213 s
+
+Insert ORM DJANGO...
+'orm_django' 5005.185 s
+
+
+"""
