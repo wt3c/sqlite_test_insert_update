@@ -152,13 +152,62 @@ class Handling:
 
         print("Insert ORM DJANGO...")
 
+    @timeit
+    def sqlalchemy_bulk_insert(self):
+
+        carga_insert = []
+
+        data = None
+
+        with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
+            reader = csv.reader(infile)
+            toronto = namedtuple("toronto", next(reader))
+
+            for data in map(toronto._make, reader):
+                carga_insert.append((self.owner.id,
+                                     data.Creation_Date,
+                                     data.Status,
+                                     data.First_3_Chars_of_Postal_Code,
+                                     data.Intersection_Street_1,
+                                     data.Intersection_Street_2,
+                                     data.Ward,
+                                     data.Service_Request_Type,
+                                     data.Division,
+                                     data.Section))
+
+                """    
+                toronto(Creation_Date='2017-01-01 00:10:19.0000000', 
+                        Status='Closed',
+                        First_3_Chars_of_Postal_Code='M9A', 
+                        Intersection_Street_1='', 
+                        Intersection_Street_2='',
+                        Ward='Etobicoke Centre (04)', 
+                        Service_Request_Type='Noise',
+                        Division='Municipal Licensing & Standards', 
+                        Section='District Enforcement')
+                """
+
+        if carga_insert:
+            try:
+
+                print('Insert SQL RAW...')
+                print(carga_insert)
+
+            except BaseException as er:
+                print(er, data)
+
 
 if __name__ == '__main__':
     handle = Handling()
-    handle.sql_raw()
+    # handle.sql_raw()
     # handle.orm_django_bulk()
 
     # handle.orm_django() # Não executar novamente, pelo amor de Deus...
+
+    handle.sqlalchemy_bulk_insert()
+
+
+
 
 """
 Insert SQL RAW... 
