@@ -104,11 +104,10 @@ venv.bak/
 .mypy_cache/
 
 
-*.py[cod]
+#*.py[cod]
 
 # #PyCharm/VIM/VSCode
 .idea
-.ropeproject
 .idea/
 .ropeproject/
 /nbproject/private/
@@ -123,3 +122,4 @@ lib
 lib64
 share
 
+laboratorio/lab/model_sqlalchemy.py

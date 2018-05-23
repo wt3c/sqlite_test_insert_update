@@ -2,9 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c529251-9aa7-4a8e-ba82-902ea2b531c6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ecf11f9e-a080-4e84-b056-16e161846ef5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ecf11f9e-a080-4e84-b056-16e161846ef5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chardetect" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chardetect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/bin/django-admin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/easy_install" beforeDir="false" afterPath="$PROJECT_DIR$/bin/easy_install" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/easy_install-3.6" beforeDir="false" afterPath="$PROJECT_DIR$/bin/easy_install-3.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/epylint" beforeDir="false" afterPath="$PROJECT_DIR$/bin/epylint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ipcluster" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ipcluster" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ipcontroller" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ipcontroller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ipengine" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ipengine" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/isort" beforeDir="false" afterPath="$PROJECT_DIR$/bin/isort" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jsonschema" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jsonschema" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-bundlerextension" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-bundlerextension" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-kernel" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-kernel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-kernelspec" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-kernelspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-migrate" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-migrate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-nbconvert" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-nbconvert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-nbextension" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-nbextension" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-notebook" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-notebook" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-qtconsole" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-qtconsole" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-run" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-run" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-serverextension" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-serverextension" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-troubleshoot" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-troubleshoot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/jupyter-trust" beforeDir="false" afterPath="$PROJECT_DIR$/bin/jupyter-trust" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/nosetests" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nosetests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/nosetests-3.4" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nosetests-3.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pybabel" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pybabel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pygmentize" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pygmentize" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pylint" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pylint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/pyreverse" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pyreverse" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/symilar" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symilar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/virtualenv-clone" beforeDir="false" afterPath="$PROJECT_DIR$/bin/virtualenv-clone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/wheel" beforeDir="false" afterPath="$PROJECT_DIR$/bin/wheel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laboratorio/lab/import_bulk.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratorio/lab/import_bulk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/share/man/man1/ipython.1.gz" beforeDir="false" afterPath="$PROJECT_DIR$/share/man/man1/ipython.1.gz" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,17 +69,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -54,29 +77,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="import_bulk.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="import_bulk.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="33" column="74" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="74" />
+            <state relative-caret-position="396">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#1058#1369#0" />
-                <element signature="e#2268#2802#1" />
-                <element signature="e#3136#4670#0" />
-                <element signature="e#3478#3502#0" />
-                <element signature="e#4719#6065#0" />
-                <element signature="e#6126#7722#0" />
+                <element signature="e#1148#1459#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alchemy_legacy.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alchemy_legacy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="54">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -87,8 +105,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laboratorio/lab/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="288">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -114,10 +132,10 @@
         <option value="$PROJECT_DIR$/laboratorio/lab/timeit.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ecf11f9e-a080-4e84-b056-16e161846ef5/console.sql" />
         <option value="$PROJECT_DIR$/laboratorio/settings.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/laboratorio/lab/import_bulk.py" />
         <option value="$PROJECT_DIR$/laboratorio/lab/test_alchemy.py" />
         <option value="$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/laboratorio/lab/import_bulk.py" />
       </list>
     </option>
   </component>
@@ -141,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,22 +167,10 @@
               <item name="sqlite_test_insert_update" type="b2602c69:ProjectViewProjectNode" />
               <item name="sqlite_test_insert_update" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sqlite_test_insert_update" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sqlite_test_insert_update" type="462c0819:PsiDirectoryNode" />
-              <item name="laboratorio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sqlite_test_insert_update" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sqlite_test_insert_update" type="462c0819:PsiDirectoryNode" />
-              <item name="laboratorio" type="462c0819:PsiDirectoryNode" />
-              <item name="lab" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,6 +324,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1600" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3298122" />
@@ -325,7 +333,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" x="28" y="209" width="1500" height="817" id="Run" order="2" type="WINDOWED" weight="0.3298122" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16808964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17129135" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15314835" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -357,16 +365,73 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1148#1459#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1148#1459#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2124">
           <caret line="183" column="54" lean-forward="true" selection-start-line="183" selection-start-column="54" selection-end-line="183" selection-end-column="54" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1058#1369#0" />
-            <element signature="e#2268#2802#1" />
-            <element signature="e#3136#4670#0" />
-            <element signature="e#3478#3502#0" />
-            <element signature="e#4719#6065#0" />
-            <element signature="e#6126#7722#0" />
+            <element signature="e#1148#1459#0" />
           </folding>
         </state>
       </provider>
@@ -384,12 +449,7 @@
           <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1058#1369#0" />
-            <element signature="e#2268#2802#1" />
-            <element signature="e#3136#4670#0" />
-            <element signature="e#3478#3502#0" />
-            <element signature="e#4719#6065#0" />
-            <element signature="e#6126#7722#0" />
+            <element signature="e#1148#1459#0" />
           </folding>
         </state>
       </provider>
@@ -407,12 +467,7 @@
           <caret line="171" selection-start-line="171" selection-end-line="171" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1058#1369#0" />
-            <element signature="e#2268#2802#1" />
-            <element signature="e#3136#4670#0" />
-            <element signature="e#3478#3502#0" />
-            <element signature="e#4719#6065#0" />
-            <element signature="e#6126#7722#0" />
+            <element signature="e#1148#1459#0" />
           </folding>
         </state>
       </provider>
@@ -587,29 +642,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ecf11f9e-a080-4e84-b056-16e161846ef5/console.sql" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="33" column="74" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1058#1369#0" />
-            <element signature="e#2268#2802#1" />
-            <element signature="e#3136#4670#0" />
-            <element signature="e#3478#3502#0" />
-            <element signature="e#4719#6065#0" />
-            <element signature="e#6126#7722#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/954c43c9/ecf11f9e-a080-4e84-b056-16e161846ef5/main.lab_toronto311">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -619,20 +651,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laboratorio/lab/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="288">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/laboratorio/lab/alchemy_legacy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="54">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laboratorio/lab/import_bulk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1148#1459#0" />
           </folding>
         </state>
       </provider>

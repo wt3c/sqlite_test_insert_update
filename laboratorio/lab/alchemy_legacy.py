@@ -24,7 +24,7 @@ def loadSession():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    print(Toronto311)
+
 
     return session
 

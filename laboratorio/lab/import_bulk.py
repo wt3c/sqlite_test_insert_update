@@ -21,6 +21,8 @@ from laboratorio.lab.models import Toronto311
 
 from laboratorio.lab.timeit import timeit
 
+from laboratorio.lab.model_sqlalchemy import Toronto311_Alchemy
+
 
 class Handling:
 
@@ -37,9 +39,9 @@ class Handling:
         cursor = conn.cursor()
 
         cursor.execute("PRAGMA cache_size = 3096")
+        cursor.execute("PRAGMA synchronous = OFF")
         cursor.execute("PRAGMA journal_mode = MEMORY")
 
-        carga_update = []
         carga_insert = []
 
         sql_insert = """
@@ -47,11 +49,8 @@ class Handling:
                         intersection_street_1, intersection_street_2, ward, service_request_type, division, section)
                         VALUES(?,?,?,?,?,?,?,?,?,?)
                      """
-        sql_update = """
-                     """
 
         data = None
-
         with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
             reader = csv.reader(infile)
             toronto = namedtuple("toronto", next(reader))
@@ -82,8 +81,8 @@ class Handling:
 
         if carga_insert:
             try:
-
                 print('Insert SQL RAW...')
+
                 cursor.executemany(sql_insert, carga_insert)
                 conn.commit()
                 conn.close()
@@ -154,28 +153,34 @@ class Handling:
 
     @timeit
     def sqlalchemy_bulk_insert(self):
+        from sqlalchemy import create_engine
+        from sqlalchemy.orm import sessionmaker
+
+        BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        dbPath = os.path.join(BASEDIR, '../db.sqlite3')
+
+        engine = create_engine('sqlite:///%s' % dbPath)
 
         carga_insert = []
 
         data = None
-
         with open(self.BASEDIR + '/lab/files/SR2017.csv', newline="") as infile:
             reader = csv.reader(infile)
             toronto = namedtuple("toronto", next(reader))
 
             for data in map(toronto._make, reader):
-                carga_insert.append((self.owner.id,
-                                     data.Creation_Date,
-                                     data.Status,
-                                     data.First_3_Chars_of_Postal_Code,
-                                     data.Intersection_Street_1,
-                                     data.Intersection_Street_2,
-                                     data.Ward,
-                                     data.Service_Request_Type,
-                                     data.Division,
-                                     data.Section))
+                carga_insert.append(Toronto311_Alchemy(owner=self.owner.id,
+                                                       creation_date=data.Creation_Date,
+                                                       status=data.Status,
+                                                       first_3_chars_of_postal_code=data.First_3_Chars_of_Postal_Code,
+                                                       intersection_street_1=data.Intersection_Street_1,
+                                                       intersection_street_2=data.Intersection_Street_2,
+                                                       ward=data.Ward,
+                                                       service_request_type=data.Service_Request_Type,
+                                                       division=data.Division,
+                                                       section=data.Section))
 
-                """    
+            """    
                 toronto(Creation_Date='2017-01-01 00:10:19.0000000', 
                         Status='Closed',
                         First_3_Chars_of_Postal_Code='M9A', 
@@ -188,36 +193,54 @@ class Handling:
                 """
 
         if carga_insert:
-            try:
+            print('Insert SQL RAW...')
 
-                print('Insert SQL RAW...')
-                print(carga_insert)
+            Session = sessionmaker(bind=engine)
+            session = Session()
 
-            except BaseException as er:
-                print(er, data)
+            session.bulk_save_objects(carga_insert)
+
+            session.commit()
+            session.close()
 
 
 if __name__ == '__main__':
     handle = Handling()
-    # handle.sql_raw()
+
+    handle.sql_raw()
     # handle.orm_django_bulk()
+    # handle.sqlalchemy_bulk_insert()
 
     # handle.orm_django() # Não executar novamente, pelo amor de Deus...
 
-    handle.sqlalchemy_bulk_insert()
-
-
-
-
 """
+
+INSERT DE 396.379 registros
+
+
 Insert SQL RAW... 
 'sql_raw' 6.208 s
 
 Insert ORM DJANGO...
-'orm_django' 107.213 s
+'orm_django' 53.343 s s
 
 Insert ORM DJANGO...
 'orm_django' 5005.185 s
 
+Insert ORM SqlAlchemy...
+'sqlalchemy_bulk_insert' 31.947 s
+
+-------------------------------------------------------------
+-------------------------------------------------------------
+INSERÇÃO EM SEQUÊNCIA...
+
+Insert SQL RAW...
+'sql_raw' 6.345 s
+
+Insert ORM DJANGO BULK...
+'orm_django_bulk' 68.766 s
+
+Insert SQL RAW...
+'sqlalchemy_bulk_insert' 39.401 s
 
 """
