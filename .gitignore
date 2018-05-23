@@ -121,5 +121,3 @@ include
 lib
 lib64
 share
-
-laboratorio/lab/model_sqlalchemy.py
